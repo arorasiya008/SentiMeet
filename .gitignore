@@ -1,0 +1,17 @@
+# Node modules
+/my-app/node_modules/
+/server/node_modules/
+<<<<<<< HEAD
+/webSocket/node_modules/
+=======
+/websocket/node_modules/
+>>>>>>> 526e213017f03f95f8a64a7c141478bc66d8afa3
+
+# Environment variable files
+/my-app/.env
+/server/.env
+<<<<<<< HEAD
+/webSocket/.env
+=======
+/websocket/.env
+>>>>>>> 526e213017f03f95f8a64a7c141478bc66d8afa3
