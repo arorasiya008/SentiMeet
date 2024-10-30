@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import DetectionImg from "../../../../assets/images/image.png";
 
 const EMOTION_API_URL = "http://localhost:5000/analyze_emotion";
 
@@ -6,7 +7,8 @@ const EmotionDetectBtn = () => {
   const [isDetecting, setIsDetecting] = useState(false);
   const [emotions, setEmotions] = useState([]);
   const videoRef = useRef(null);
-  const intervalIdRef = useRef(null);  // Reference to store interval ID
+  const intervalIdRef = useRef(null); // Reference to store interval ID
+  const streamRef = useRef(null); // Reference to store media stream
 
   const captureTab = async () => {
     try {
@@ -14,6 +16,7 @@ const EmotionDetectBtn = () => {
         video: { displaySurface: "browser" },
       });
       videoRef.current.srcObject = captureStream;
+      streamRef.current = captureStream; // Store stream to stop later
     } catch (err) {
       console.error("Error capturing browser tab: ", err);
     }
@@ -27,15 +30,22 @@ const EmotionDetectBtn = () => {
       }, 1000);
       setIsDetecting(true);
     } else {
-      // Clear the interval and stop detecting
+      // Stop detecting and clear data
       clearInterval(intervalIdRef.current);
       intervalIdRef.current = null;
       setIsDetecting(false);
+      setEmotions([]);
+      
+      // Stop video stream to release resources
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+        streamRef.current = null;
+      }
     }
   };
 
   const captureAndSendFrame = async () => {
-    if (videoRef.current) {
+    if (videoRef.current && videoRef.current.readyState === 4) { // Check if video is ready
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
       canvas.width = videoRef.current.videoWidth;
@@ -85,29 +95,42 @@ const EmotionDetectBtn = () => {
     // Cleanup on component unmount
     return () => {
       clearInterval(intervalIdRef.current);
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+      }
     };
   }, []);
 
   return (
-    <div className="function-btn-container" onClick={startEmotionDetection}>
-      <div className="predict-container">
-        <button>{isDetecting ? "Stop Detection" : "Start Detection"}</button>
+    <div className="function-btn-container">
+      <div className="predict-container" onClick={startEmotionDetection}>
+        <img
+          className="chat-btn-img function-btn-img"
+          src={DetectionImg}
+          alt="Start Detection"
+        />
+        <div className="function-btn-name">
+          {isDetecting ? "Stop Detection" : "Start Detection"}
+        </div>
         <video ref={videoRef} style={{ display: "none" }} autoPlay />
       </div>
 
       {/* Display Detected Emotions */}
       <div className="emotion-display">
-        {emotions.length > 0 &&
+        {isDetecting && emotions.length > 0 &&
           emotions.map((emotionData, index) => (
             <div
-              key={index}
-              style={{
-                position: "absolute",
-                top: `${emotionData.face_position.y}px`,
-                left: `${emotionData.face_position.x}px`,
-                border: "2px solid red",
-                padding: "5px",
-                color: "white",
+            key={index}
+            style={{
+              position: "absolute",
+              top: `${emotionData.face_position.y}px`, // Position based on face location
+              left: `${emotionData.face_position.x}px`, // Position based on face location
+              transform: "translate(-50%, -100%)", // Center the label above the face
+              border: "2px solid red",
+              padding: "5px",
+              color: "white",
+              backgroundColor: "rgba(0, 0, 0, 0.6)", // Optional: add background for readability
+              fontSize: "14px",
               }}
             >
               {emotionData.emotion}

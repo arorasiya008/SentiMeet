@@ -23,6 +23,8 @@ const RoomPage = (props) => {
   const [screenStream, setScreenStream] = useState(null);
   const [isAttendee, setIsAttendee] = useState(false);
   const [isChat, setIsChat] = useState(false);
+  const [videoElements, setVideoElements] = useState([]); // New state to keep track of video elements
+
   useEffect(() => {
     console.log("Hi startCall")
     if (!username) {
@@ -212,6 +214,11 @@ const RoomPage = (props) => {
         }
       }
     }
+    const handleUserDisconnect = (userId) => {
+      setVideoElements((currentElements) =>
+        currentElements.filter((videoEl) => videoEl.userId !== userId)
+      );
+    };
   }, [
     videoRegionWidth,
     videoRegionHeight,

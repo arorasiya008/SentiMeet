@@ -325,16 +325,20 @@ body {
 .screen-2-bottom-title {
   font-size: 30px;
   font-weight: 700;
+  color:rgb(0, 149, 255);
 }
 
 .screen-2-bottom-description {
   font-size: 20px;
+
 }
 
 .slider {
+  background-color: white;
   position: relative;
   width: 1200px;
   height: calc(100vh - 150px);
+  height: 100%;
   margin: auto;
   overflow: hidden;
 }

@@ -9,7 +9,7 @@ const DisplayRoomId = ({ roomId }) => {
   function copyHandler() {
     if (!isCopy) {
       const textarea = document.createElement("textarea");
-      textarea.value = `${window.location.origin}/join?roomId=${roomId}`;
+      textarea.value = `${roomId}`;
 
       // Append the textarea element to the body
       document.body.appendChild(textarea);

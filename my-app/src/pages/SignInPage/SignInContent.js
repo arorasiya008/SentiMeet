@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import * as validFormat from "../../utils/validFormat";
 import loadingImg from "../../assets/images/sing-in-loading.png";
 import googleImg from "../../assets/images/google_login.png";
+import signin from "../../assets/images/signin.png";
 
 const SignInContent = (props) => {
   const { setIsSignInAction, setUsernameAction, setAvatarAction } = props;
@@ -66,38 +67,48 @@ const SignInContent = (props) => {
   }
 
   return (
-    <div className="sign-in-up-container">
-      <div className="sign-in-up-title">Sign In</div>
-      <SignInInput
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        keyDownHandler={keyDownHandler}
-      />
-      <div className="sign-in-error-container">
-        <ErrorMessages errMsg={signInErr} />
-      </div>
-
-      <div className="btn-and-loading-container">
-        <SignInBtns handler={signInHandler} />
-        {loading && (
-          <img src={loadingImg} className="sign-in-up-loading" alt="" />
-        )}
-      </div>
-      <div className="google-auth-container">
-        <div className="google-auth-text">or sign in with google account</div>
-        <div className="google-img-container">
-          <a href={`${process.env.REACT_APP_API_URL}/api/auth/google`}>
-            <img src={googleImg} className="google-img" alt="" />
-          </a>
+    <div className="main-container-in"> {/* Add a unique class for styling */}
+      {/* Main sign-in container */}
+            {/* Left section for sign-up form */}
+      <div className="left-section">
+       <div className="sign-in-container">
+        <div className="sign-in-title">Sign In</div>
+        <SignInInput
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          keyDownHandler={keyDownHandler}
+        />
+        <div className="sign-in-error-container">
+          <ErrorMessages errMsg={signInErr} />
         </div>
+  
+        <div className="btn-and-loading-container">
+          <SignInBtns handler={signInHandler} />
+          {loading && (
+            <img src={loadingImg} className="sign-in-up-loading" alt="" />
+          )}
+        </div>
+        <div className="google-auth-container">
+          <div className="google-auth-text">or sign in with google account</div>
+          <div className="google-img-container">
+            <a href={`${process.env.REACT_APP_API_URL}/api/auth/google`}>
+              <img src={googleImg} className="google-img" alt="" />
+            </a>
+          </div>
+        </div>
+        <div className="switch-sign-up" onClick={switchToSignUp}>
+          First time visit? Sign up now!
+        </div>
+       </div>
       </div>
-      <div className="switch-sign-in-up" onClick={switchToSignUp}>
-        First time visit? Sign up now!
+      {/* Right section to display the image */}
+      <div className="right-section">
+        <img src={signin} alt="Sign-up illustration" />
       </div>
     </div>
-  );
+  );  
 };
 
 //props subscript state, auto update if state updated

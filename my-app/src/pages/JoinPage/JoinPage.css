@@ -1,20 +1,46 @@
-.join-error-message {
-  width: 244px;
-}
-
+/* Main Container */
 .join-container {
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
   height: calc(100vh - 82px);
   display: flex;
+  align-items: center; /* Center-aligns content vertically */
+  justify-content: center; /* Center-aligns content horizontally */
+  background-color: white; /* Ensure this matches your desired uniform color */
+}
+
+/* Left and Right Sections */
+.left-section, .right-section {
+  width: 50%;
+  height: 100%;
+  background-color: white; /* Remove any background color to let .join-container color show through */
+  display: flex;
+  align-items: center; /* Center-align content vertically within each section */
+  justify-content: center; /* Center-align content horizontally within each section */
+  box-sizing: border-box; /* Ensure padding doesn't add extra width */
+  padding: 0;
+  margin: 0;
+}
+
+/* Join Box (for Join Meeting Form) */
+.join-box {
+  width: 80%;
+  max-width: 500px; /* Optional, adjust max width */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.join-input-container {
-  margin-bottom: 80px !important;
-}
 
+
+
+
+/* Join Box */
 .join-box {
   width: 400px;
   padding-bottom: 30px;
@@ -24,16 +50,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   border-radius: 8px;
 }
 
+
+/* Join Title */
 .join-title {
   font-weight: 700;
   font-size: 24px;
   margin-top: 30px;
 }
 
+/* Error Message */
+.join-error-message {
+  width: 244px;
+}
+
+/* Input Container */
+.join-input-container {
+  margin-bottom: 80px !important;
+}
+
+/* Template Input Container */
 .template-input-container {
   display: flex;
   flex-direction: column;
@@ -45,23 +83,28 @@
   margin-bottom: 20px;
 }
 
+/* Template Input Group */
 .template-input-group {
   position: relative;
-  margin-bottom: 10px;
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Template Input with Placeholder */
+.template-input-filled {
+  position: relative;
+  width: 220px;
 }
 
 .template-input-filled > .template-input {
-  border: none;
-  border: 2px solid;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
   height: 24px;
   font-size: 1.0625rem;
   line-height: 147.6%;
   padding: 10px;
-  border-radius: 8px;
   transition: 0.3s;
-  width: 220px;
 }
 
 .template-input-filled > .template-input:focus {
@@ -73,27 +116,30 @@
   border-color: #0E72ED;
 }
 
+/* Placeholder Styling */
 .template-input-filled > .template-placeholder {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 50%;
+  left: 12px;
   font-size: 16px;
   font-weight: 400;
   color: #A0A0A0;
-  transition: top 0.3s;
+  transform: translateY(-50%);
+  transition: top 0.3s ease, font-size 0.3s ease;
+  pointer-events: none;
 }
 
 .template-input-filled > .template-input:focus + .template-placeholder,
 .template-input-filled > .template-input:valid + .template-placeholder {
-  top: 0;
+  top: -8px;
+  left: 12px;
   font-size: 12px;
-  margin-bottom: 32px;
+  background: #f5f5f5;
+  padding: 0 4px;
+  border-radius: 4px;
 }
 
-.template-input-filled {
-  position: relative;
-}
-
+/* Button Container */
 .join-btn-container {
   display: flex;
   justify-content: center;
@@ -102,6 +148,7 @@
   width: 100%;
 }
 
+/* Join Button */
 .join-btn {
   display: flex;
   justify-content: center;
@@ -109,12 +156,11 @@
   width: 80px;
   height: 30px;
   background-color: #0E72ED;
-  border-radius: 8px;
-  border: 1px solid #e5e5e5;
   border: none;
   font-weight: 700;
   color: #FFFFFF;
-  transition: 0.3s;
+  border-radius: 8px;
+  transition: background-color 0.3s;
   cursor: pointer;
 }
 
@@ -122,6 +168,7 @@
   background-color: #0956B5;
 }
 
+/* Cancel Button */
 .join-cancel-btn {
   display: flex;
   justify-content: center;
@@ -132,7 +179,7 @@
   border: 1px solid #e5e5e5;
   font-weight: 700;
   border-radius: 8px;
-  transition: 0.3s;
+  transition: background-color 0.3s;
   cursor: pointer;
 }
 
@@ -140,8 +187,9 @@
   background-color: #d3d3d3;
 }
 
+/* Responsive Design */
 @media (max-width: 500px) {
   .join-box {
-    width: 90%;
+    width: 90%; /* Make join box responsive */
   }
-}/*# sourceMappingURL=JoinPage.css.map */
+}

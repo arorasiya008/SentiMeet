@@ -92,6 +92,14 @@
   padding-left: 6px;
   padding-right: 6px;
 }
+.modal-body-text {
+  font-size: 17px;                /* Slightly larger for readability */
+  color: #4a4a4a;                 /* Softer color for better aesthetics */
+  line-height: 1.6;               /* Increased line-height for readability */
+  margin: 10px 0;                 /* Space around the text for visual balance */
+  text-align: center;             /* Center-align for better alignment in the modal */
+}
+
 
 .modal-container .modal-footer {
   flex: 20%;

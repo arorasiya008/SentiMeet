@@ -5,131 +5,111 @@ import { setIsSignIn } from "../../store/actions";
 import { refresh, signOut } from "../../utils/fetchUserApi";
 import Modal from "../Modal/Modal";
 import Avatar from "./Avatar";
+import "./Nav.css";
 
 const Nav = ({ isSignIn, setIsSignInAction, avatar }) => {
   const history = useHistory();
   const [openModal, setOpenModal] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to track drawer visibility
 
   const logoHandler = () => {
     history.push("/");
   };
 
-  const signInHandler = () => {
-    history.push("/signIn");
-  };
-  const joinPageHandler = () => {
-    history.push("/join");
-  };
-  const hostPageHandler = () => {
-    history.push("/join?host=true");
-  };
-  const profileHandler = () => {
-    history.push("/profile");
-  };
-  const recordingHandler = () => {
-    history.push("/recording");
-  };
+  const signInHandler = () => history.push("/signIn");
+  const joinPageHandler = () => history.push("/join");
+  const hostPageHandler = () => history.push("/join?host=true");
+  const profileHandler = () => history.push("/profile");
+  const recordingHandler = () => history.push("/recording");
+
   const signOutHandler = async () => {
     try {
       const response = await signOut();
       if (response.ok) {
         setIsSignInAction(false);
         setOpenModal(true);
-        window.location.href = "/";
       }
     } catch (error) {
-      console.log("error: ", error);
+      console.error("Error: ", error);
     }
   };
+
   const refreshHandler = async () => {
     try {
       const response = await refresh();
-      if (response.ok) {
-        setIsSignInAction(true);
-      } else {
-        setIsSignInAction(false);
-      }
+      setIsSignInAction(response.ok);
     } catch (error) {
-      console.log("error: ", error);
+      console.error("Error: ", error);
     }
   };
 
   useEffect(() => {
-    //check if have refresh token cookie, then show log in status
     refreshHandler();
   }, []);
 
-  const Drawer = () => {
-    return (
-      <div className="nav-drawer-container hide">
-        <div className="nav-profile drawer-item" onClick={profileHandler}>
-          Profile
-        </div>
-        <div className="nav-recording drawer-item" onClick={recordingHandler}>
-          Recording
-        </div>
-        {/* <div className="nav-calendar drawer-item">Calendar</div> */}
-        <div className="nav-signOut drawer-item" onClick={signOutHandler}>
-          Sign Out
-        </div>
+  // Drawer component
+  const Drawer = () => (
+    <div className="nav-drawer">
+      <div className="drawer-item" onClick={profileHandler}>
+        Profile
       </div>
-    );
-  };
+      <div className="drawer-item" onClick={recordingHandler}>
+        Recording
+      </div>
+      <div className="drawer-item" onClick={signOutHandler}>
+        Sign Out
+      </div>
+    </div>
+  );
 
   return (
     <div className="navigator-container">
       <div className="nav-logo" onClick={logoHandler}>
-        Meeting
+        <span className="nav-logo-text">SentiMeet</span>
       </div>
-      <div className="nav-function-container">
-        {/* <div className="nav-schedule" onClick={scheduleHandler}>
-          Schedule
-        </div> */}
-        <div className="nav-join" onClick={joinPageHandler}>
-          Join
+
+      <div className="nav-actions">
+        <div className="nav-action-btn nav-join-btn" onClick={joinPageHandler}>
+          <i className="fas fa-user-plus"></i> Join
         </div>
-        <div className="nav-host" onClick={hostPageHandler}>
-          Host
+        <div className="nav-action-btn host-btn" onClick={hostPageHandler}>
+          <i className="fas fa-users"></i> Host
         </div>
         {isSignIn ? (
-          <>
-            <Avatar key={Math.random()} avatar={avatar} />
-            <Drawer />
-          </>
+          <div className="nav-profile">
+            <div onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+              <Avatar key={Math.random()} avatar={avatar} />
+            </div>
+            {isDrawerOpen && <Drawer />} {/* Conditionally render Drawer */}
+          </div>
         ) : (
           <div className="nav-signIn-Up" onClick={signInHandler}>
-            Sign In/Up
+            <i className="fas fa-sign-in-alt"></i> Sign In / Up
           </div>
         )}
       </div>
 
-      {/* {openModal && (
+      {openModal && (
         <Modal
           modalTitle="Message"
-          modalBody="log out success! will redirect to home page"
+          modalBody="Log out success! Redirecting to home page"
           btnHandler={() => {
-            window.location.href = "/";
+            history.push("/");
             setOpenModal(false);
           }}
           btnText="OK"
         />
-      )} */}
+      )}
     </div>
   );
 };
 
-//props subscript state, auto update if state updated
-const mapStoreStateToProps = (state) => {
-  return {
-    ...state,
-  };
-};
+const mapStoreStateToProps = (state) => ({
+  isSignIn: state.isSignIn,
+});
 
-// props can direct use action
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setIsSignInAction: (isSignIn) => dispatch(setIsSignIn(isSignIn)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  setIsSignInAction: (isSignIn) => dispatch(setIsSignIn(isSignIn)),
+});
 
 export default connect(mapStoreStateToProps, mapDispatchToProps)(Nav);

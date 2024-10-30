@@ -10,6 +10,7 @@ const Modal = ({ modalTitle, modalBody, btnHandler, btnText }) => {
           <button onClick={btnHandler}>X</button>
         </div>
         <div className="modal-body">
+        <p className="modal-body-text">{modalBody}</p> {/* Adding a paragraph tag with a specific class */}
           <div>{modalBody}</div>
         </div>
         <div className="modal-footer">

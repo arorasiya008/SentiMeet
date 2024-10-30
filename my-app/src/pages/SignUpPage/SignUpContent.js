@@ -7,6 +7,9 @@ import { useHistory } from "react-router-dom";
 import * as validFormat from "../../utils/validFormat";
 import loadingImg from "../../assets/images/sing-in-loading.png";
 import Modal from "../../components/Modal/Modal";
+import "./SignUpContent.css";
+import signup from "../../assets/images/wel.png";
+
 
 const SignUpContent = () => {
   const [username, setUsername] = useState("");
@@ -62,45 +65,60 @@ const SignUpContent = () => {
       }
     }
   }
-
   return (
-    <>
-      <div className="sign-in-up-container">
-        <div className="sign-in-up-title">Sign Up</div>
-        <SignUpInput
-          username={username}
-          setUsername={setUsername}
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          keyDownHandler={keyDownHandler}
-        />
-        <div className="sign-out-error-container">
-          <ErrorMessages errMsg={signUpErr} />
-        </div>
-
-        <div className="btn-and-loading-container">
-          <SignUpBtns handler={signUpHandler} />
-          {loading && (
-            <img src={loadingImg} className="sign-in-up-loading" alt="" />
-          )}
-        </div>
-
-        <div className="switch-sign-in-up" onClick={switchToSignIn}>
-          Already have account? Sign in now!
+    <div className="main-container">
+      {/* Left section for sign-up form */}
+      <div className="left-section">
+        <div className="sign-in-up-container">
+          <div className="sign-in-up-title">Sign Up</div>
+          <SignUpInput
+            className="template-input"
+            username={username}
+            setUsername={setUsername}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            keyDownHandler={keyDownHandler}
+          />
+          <div className="sign-in-up-format-fail">
+            <ErrorMessages errMsg={signUpErr} />
+          </div>
+  
+          <div className="btn-and-loading-container">
+            <SignUpBtns handler={signUpHandler} />
+            {loading && (
+              <img src={loadingImg} className="sign-in-up-loading" alt="loading" />
+            )}
+          </div>
+  
+          <div className="switch-sign-in-up" onClick={switchToSignIn}>
+            Already have an account? Sign in now!
+          </div>
         </div>
       </div>
+  
+      {/* Right section to display the image */}
+      <div className="right-section">
+        <img src={signup} alt="Sign-up illustration" />
+      </div>
+  
+      {/* Modal for sign-up success */}
       {openModal && (
         <Modal
+          className="modal-content"
           modalTitle="Message"
           modalBody="Sign up success, will redirect to sign in page"
           btnHandler={switchToSignIn}
           btnText="OK"
         />
       )}
-    </>
+    </div>
   );
+  
+  
+  
 };
+
 
 export default SignUpContent;

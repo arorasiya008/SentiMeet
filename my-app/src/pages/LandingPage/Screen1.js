@@ -23,7 +23,7 @@ const Screen1 = ({ isSignIn }) => {
       <div className="screen-1-inner-container">
         <div className="screen-1-left-container">
           <div className="screen-1-title">
-            Let's <span className="screen-1-keyword">Meeting</span>
+            Let's <span className="screen-1-keyword">SentiMeet</span>
             <span>, let's be together</span>
           </div>
           <div className="screen-1-description">

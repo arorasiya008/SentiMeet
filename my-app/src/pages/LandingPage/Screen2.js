@@ -94,7 +94,7 @@ const Screen2 = () => {
   return (
     <div className="screen-2">
       <div className="screen-2-top-container">
-        <div className="screen-2-top-title">Meeting</div>
+        <div className="screen-2-top-title">SentiMeet</div>
         <div className="screen-2-top-description">
           <div>Solutions for modern team collaboration</div>
         </div>
