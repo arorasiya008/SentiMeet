@@ -94,7 +94,7 @@ const Password = (props) => {
         className="change-pw-region-II change-pw-btn"
         onClick={changePwHandler}
       >
-        EDIT
+        SAVE
         {loading && <img src={loadingImg} className="change-loading" alt="" />}
       </div>
       {openModal && (

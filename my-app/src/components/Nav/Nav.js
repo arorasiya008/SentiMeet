@@ -53,9 +53,6 @@ const Nav = ({ isSignIn, setIsSignInAction, avatar }) => {
       <div className="drawer-item" onClick={profileHandler}>
         Profile
       </div>
-      <div className="drawer-item" onClick={recordingHandler}>
-        Recording
-      </div>
       <div className="drawer-item" onClick={signOutHandler}>
         Sign Out
       </div>

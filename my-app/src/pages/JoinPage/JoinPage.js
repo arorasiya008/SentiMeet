@@ -144,7 +144,7 @@ const JoinPage = (props) => {
               AI-Driven Insights for Every Call
               </div>
               <div className="screen-2-bottom-description">
-              With SentiMeet, connect and collaborate while sensing the mood in real time.
+              Connect and collaborate while sensing the mood in real time.
               </div>
             </div>
             <div className="screen-2-bottom-img-container">
@@ -161,7 +161,7 @@ const JoinPage = (props) => {
             <div className="screen-2-bottom-title-container">
               <div className="screen-2-bottom-title">Direct Connections, Zero Third Parties</div>
               <div className="screen-2-bottom-description">
-              With SentiMeet's P2P technology, enjoy secure conversations without any intermediaries.
+              With SentiMeet's P2P technology, enjoy <br></br>secure conversations without any intermediaries.
               </div>
             </div>
             <div className="screen-2-bottom-img-container">

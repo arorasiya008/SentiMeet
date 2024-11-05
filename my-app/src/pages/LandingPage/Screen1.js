@@ -23,13 +23,13 @@ const Screen1 = ({ isSignIn }) => {
       <div className="screen-1-inner-container">
         <div className="screen-1-left-container">
           <div className="screen-1-title">
-            Let's <span className="screen-1-keyword">SentiMeet</span>
-            <span>, let's be together</span>
+            <span className="screen-1-keyword">SentiMeet: </span>
+            <br></br>
+            Connect Beyond the Surface
           </div>
           <div className="screen-1-description">
-            <div>Break the distance, link to each other, </div>
-            <div>we're in the same place.</div>
-            <div>All you need is on the Meeting platform.</div>
+            <div>Feel the mood, read the room, and strengthen connections with </div>
+            <div>sentiment-driven insights.</div>
           </div>
           <div className="screen-1-btn-container">
             {isSignIn ? (
@@ -53,7 +53,7 @@ const Screen1 = ({ isSignIn }) => {
                   className="screen-1-sign-up-link"
                   onClick={pushToSignUpHandler}
                 >
-                  no account? sign Up here
+                  No account? Sign Up Here
                 </div>
               </>
             )}

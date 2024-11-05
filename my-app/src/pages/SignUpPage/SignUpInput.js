@@ -177,7 +177,7 @@ const SignUpInput = (props) => {
         <InputTemplate
           value={password}
           onchangeHandler={passwordHandler}
-          spanValue={"password"}
+          spanValue={"Password"}
           type={"password"}
           keyDownHandler={keyDownHandler}
         />
@@ -197,7 +197,7 @@ const SignUpInput = (props) => {
           />
         )}
         <div className="sign-in-up-fail-message non-vis">
-          at least 8 characters of numbers and letters
+          At least 8 characters of numbers and letters
         </div>
       </div>
     </div>

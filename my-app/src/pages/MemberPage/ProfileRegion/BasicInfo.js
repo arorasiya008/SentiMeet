@@ -131,7 +131,7 @@ const BasicInfo = (props) => {
       <div className="basic-info-region-II-III-container">
         <div className="basic-info-region-II">
           <div className="basic-info-title">
-            username
+            Username
             <div className="basic-info-username">{defaultUsername}</div>
             <UsernameInput
               newUsername={newUsername}
@@ -139,8 +139,8 @@ const BasicInfo = (props) => {
             />
           </div>
           <div className="basic-info-title">
-            email
-            <div className="basic-info-email">{email}</div>
+            E-mail 
+            <div className="basic-info-email"><br></br>{email}</div>
           </div>
           <div className="basic-info-error-message">
             <ErrorMessages errMsg={changeNameErr} />
@@ -150,7 +150,7 @@ const BasicInfo = (props) => {
           className="basic-info-region-III basic-info-username-edit-btn"
           onClick={changeNameHandler}
         >
-          EDIT
+          SAVE
           {loading && (
             <img src={loadingImg} className="change-loading" alt="" />
           )}
@@ -160,16 +160,8 @@ const BasicInfo = (props) => {
       {openUsernameModal && (
         <Modal
           modalTitle="Message"
-          modalBody="Change username success!"
+          modalBody="Username changed successfully!"
           btnHandler={closeUsernameModal}
-          btnText="OK"
-        />
-      )}
-      {openAvatarModal && (
-        <Modal
-          modalTitle="Message"
-          modalBody="Change avatar success!"
-          btnHandler={closeAvatarModal}
           btnText="OK"
         />
       )}

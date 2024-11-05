@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2c3e50;
+  background: #0a2744;
   color: white;
   padding: 15px 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -20,7 +20,13 @@
 .nav-logo-text {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Bottom border only on text */
   padding-bottom: 5px; /* Add some space below text */
+  color: #ffffff;
 }
+
+.nav-logo-text:hover {
+  color: #b2b5b9; /* Change to your desired hover text color */
+}
+
 
 
 .nav-actions {
@@ -114,13 +120,18 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 10px 0;
+  transform: translateY(10px); /* Start slightly above */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations */
 }
 /* Drawer Item Styles */
 .drawer-item {
-  padding: 15px 20px; /* Adequate padding for click area */
-  color: #4a4a4a; /* Text color */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition */
+  padding: 12px 20px;
+  color: #2c3e50;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .drawer-item:hover {

@@ -90,7 +90,7 @@
 
 .basic-info-region-III, .change-pw-region-II {
   width: 100px;
-  background-color: #0E72ED;
+  background-color: #0f253f;
   color: #FFFFFF;
   font-weight: 700;
   text-align: center;
@@ -111,7 +111,7 @@
 .basic-info-username, .basic-info-email {
   font-size: 14px;
   font-weight: 400;
-  color: #A0A0A0;
+  color: #34363a;
   margin-bottom: 5px;
 }
 
@@ -119,6 +119,7 @@
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: #0a203b;
 }
 
 .basic-info-container {

@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import streamImg from "../../assets/images/landing-page-stream.svg";
 import chatImg from "../../assets/images/landing-page-chat.svg";
-import recordingImg from "../../assets/images/record_start.svg";
 import shareScreenImg from "../../assets/images/share_screen.svg";
 import tensorflowImg from "../../assets/images/tensorflow_on.svg";
-import demoBasicImg from "../../assets/images/demo-basic.png";
-import demoRecordingImg from "../../assets/images/demo-recording.png";
-import demoDetectImg from "../../assets/images/demo-tensorflow.gif";
-import allHandPoseImg from "../../assets/images/all_hand_pose.png";
+import demoBasicImg from "../../assets/images/image1.jpg";
+import demoRecordingImg from "../../assets/images/image2.jpg";
+import demoDetectImg from "../../assets/images/image3.jpg";
+
 
 const Screen2 = () => {
   useEffect(() => {
@@ -96,7 +95,7 @@ const Screen2 = () => {
       <div className="screen-2-top-container">
         <div className="screen-2-top-title">SentiMeet</div>
         <div className="screen-2-top-description">
-          <div>Solutions for modern team collaboration</div>
+        Solutions for modern team collaboration
         </div>
       </div>
       <div className="slider">
@@ -117,7 +116,7 @@ const Screen2 = () => {
                   src={streamImg}
                   alt=""
                 />
-                <div>Real time streaming</div>
+                <div className="screen-2-bottom-text">Real time streaming</div>
               </div>
               <div className="screen-2-bottom-feature-container">
                 <img
@@ -125,7 +124,7 @@ const Screen2 = () => {
                   src={chatImg}
                   alt=""
                 />
-                <div>Real time messaging</div>
+                <div className="screen-2-bottom-text">Real time messaging</div>
               </div>
             </div>
             <div className="screen-2-bottom-img-container">
@@ -152,16 +151,9 @@ const Screen2 = () => {
                   src={shareScreenImg}
                   alt=""
                 />
-                <div>Screen sharing</div>
+                <div className="screen-2-bottom-text">Screen sharing</div>
               </div>
-              <div className="screen-2-bottom-feature-container">
-                <img
-                  className="screen-2-bottom-feature-icon"
-                  src={recordingImg}
-                  alt=""
-                />
-                <div>Recording</div>
-              </div>
+              
             </div>
             <div className="screen-2-bottom-img-container">
               <img
@@ -175,10 +167,9 @@ const Screen2 = () => {
         <div className="screen-2-bottom-container slide ">
           <div className="screen-2-bottom-set-container">
             <div className="screen-2-bottom-title-container">
-              <div className="screen-2-bottom-title">Hand pose detection</div>
+              <div className="screen-2-bottom-title">Real-Time Sentiment Analysis</div>
               <div className="screen-2-bottom-description">
-                Express your emotions through hand poses, breaking the gap
-                between virtual and reality
+              Capture your emotions instantly, bridging the gap between <br></br>virtual interactions and genuine connections.
               </div>
             </div>
             <div className="screen-2-bottom-feature-list-container">
@@ -188,18 +179,13 @@ const Screen2 = () => {
                   src={tensorflowImg}
                   alt=""
                 />
-                <div>hand pose detection</div>
+                <div className="screen-2-bottom-text">Emotion detection</div>
               </div>
             </div>
             <div className="screen-2-bottom-img-container">
               <img
                 className="screen-2-bottom-demo-img-tf"
                 src={demoDetectImg}
-                alt=""
-              />
-              <img
-                className="screen-2-bottom-hand-pose-img"
-                src={allHandPoseImg}
                 alt=""
               />
             </div>

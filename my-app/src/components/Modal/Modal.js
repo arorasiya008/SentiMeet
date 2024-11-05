@@ -11,7 +11,6 @@ const Modal = ({ modalTitle, modalBody, btnHandler, btnText }) => {
         </div>
         <div className="modal-body">
         <p className="modal-body-text">{modalBody}</p> {/* Adding a paragraph tag with a specific class */}
-          <div>{modalBody}</div>
         </div>
         <div className="modal-footer">
           {/* <button

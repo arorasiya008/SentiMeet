@@ -36,7 +36,7 @@ const ProfileRegion = (props) => {
     <div>
       <Nav />
       <div className="member-page-container">
-        <div className="member-tabs-container">
+        {/* <div className="member-tabs-container">
           <div
             className="member-tab profile-tab member-tab-selected"
             onClick={pushToProfile}
@@ -46,13 +46,12 @@ const ProfileRegion = (props) => {
           <div className="member-tab recording-tab" onClick={pushToRecording}>
             Recording
           </div>
-        </div>
+        </div> */}
         <div className="member-content-container">
           <BasicInfo />
-
           {!googleId && (
             <>
-              <div className="member-separate-bar">Change Password</div>
+              <div className="basic-info-title">Change Password</div>
               <Password />
             </>
           )}

@@ -98,6 +98,7 @@ const SignInInput = (props) => {
   return (
     <div>
       <div className="sign-in-email-input-container">
+        <br></br>
         <InputTemplate
           value={email}
           onchangeHandler={emailHandler}
@@ -113,7 +114,7 @@ const SignInInput = (props) => {
         <InputTemplate
           value={password}
           onchangeHandler={passwordHandler}
-          spanValue={"password"}
+          spanValue={"Password"}
           type={"password"}
           keyDownHandler={keyDownHandler}
         />
@@ -133,7 +134,7 @@ const SignInInput = (props) => {
           />
         )}
         <div className="sign-in-up-fail-message non-vis">
-          at least 8 characters of numbers and letters
+          At least 8 characters of numbers and letters
         </div>
       </div>
     </div>

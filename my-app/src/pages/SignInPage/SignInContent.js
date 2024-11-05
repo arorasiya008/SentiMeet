@@ -67,10 +67,10 @@ const SignInContent = (props) => {
   }
 
   return (
-    <div className="main-container-in"> {/* Add a unique class for styling */}
+    <div className="main-container-in-2"> {/* Add a unique class for styling */}
       {/* Main sign-in container */}
             {/* Left section for sign-up form */}
-      <div className="left-section">
+      <div className="left-section-signin">
        <div className="sign-in-container">
         <div className="sign-in-title">Sign In</div>
         <SignInInput
@@ -91,7 +91,7 @@ const SignInContent = (props) => {
           )}
         </div>
         <div className="google-auth-container">
-          <div className="google-auth-text">or sign in with google account</div>
+          <div className="google-auth-text">Or sign in with your Google account</div>
           <div className="google-img-container">
             <a href={`${process.env.REACT_APP_API_URL}/api/auth/google`}>
               <img src={googleImg} className="google-img" alt="" />

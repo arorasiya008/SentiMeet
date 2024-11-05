@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Centered container */
-.main-container-in {
+.main-container-in-2 {
   display: flex;
   width: 1000px; /* Width for the main container */
   height: 500px;
@@ -10,6 +10,7 @@
   margin-top: 5%;
   border-radius: 15px;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #f7f8fc;
 }
 /* Right section to display the image */
 .right-section {
@@ -19,7 +20,6 @@
   justify-content: center;
   padding: 0; /* Remove padding around the image */
   box-sizing: border-box;
-  background-color: #f0f0f0;
 }
 
 /* Ensures image fills the right section */
@@ -30,10 +30,10 @@
   border-radius: 0px; /* Optional: keeps corners rounded */
 }
 /* Left section for the sign-up form */
-.left-section,
+.left-section-signin,
 .sign-in-up-container {
   flex: 0.85;
-  background-color: #ffffff;
+  background-color: #ffffff; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@
   font-size: 26px;
   font-weight: 700;
   padding: 10px;
-  color:rgb(0, 149, 255);
+  color:#111141
 }
 
 /* Additional styling for scattered icons */
@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:rgb(70, 138, 180) ;
+  background-color:rgb(13, 41, 58) ;
   border: 1px solid #e5e5e5;
   color: white;
   font-weight: 700;
@@ -83,7 +83,7 @@
 }
 
 .sign-in-btn:hover,.sign-up-btn:hover {
-  background-color: rgb(70, 112, 180);
+  background-color: rgb(60, 86, 128);
 }
 
 
@@ -94,13 +94,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f8f8f8;
+  background-image: linear-gradient(135deg, #b0b7be 0%, #8fa1ac 50%, #78878e 100%); 
 }
 
 .switch-sign-up {
   font-size: 0.95em; /* Increased font size */
   font-weight: bold; /* Make it bold */
   text-align: center;
-  color: rgb(0, 149, 255);
+  color: rgb(22, 54, 77);
   cursor: pointer;
   margin-top: 15px;
   transition: color 0.3s ease, background 0.3s ease; /* Added background transition */
@@ -202,10 +204,16 @@
 }
 
 .google-auth-text {
-  color: #A0A0A0;
+  color: #38383f;
   font-size: 14px;
 }/*# sourceMappingURL=SignInPage.css.map */
 .sign-in-btn,.sign-up-btn {
   pointer-events: auto;
   cursor: pointer;
+}
+
+.small-gap {
+  margin-top: 2px; /* Adjust to set a smaller gap */
+  margin-bottom: 2px;
+  display: block; /* This makes margin settings effective on <br> */
 }

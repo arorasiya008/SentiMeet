@@ -6,14 +6,15 @@
   display: flex;
   align-items: center; /* Center-aligns content vertically */
   justify-content: center; /* Center-aligns content horizontally */
-  background-color: white; /* Ensure this matches your desired uniform color */
+  background-color: #dee3e7; 
 }
 
 /* Left and Right Sections */
 .left-section, .right-section {
   width: 50%;
   height: 100%;
-  background-color: white; /* Remove any background color to let .join-container color show through */
+  background-color:#08111a;  /*Remove any background color to let .join-container color show through */
+  background-image: linear-gradient(135deg, #e7eaec 0%, #8fa1ac 50%, #78878e 100%); 
   display: flex;
   align-items: center; /* Center-align content vertically within each section */
   justify-content: center; /* Center-align content horizontally within each section */
@@ -34,6 +35,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 
@@ -155,17 +157,17 @@
   align-items: center;
   width: 80px;
   height: 30px;
-  background-color: #0E72ED;
+  background-color: #12253d;
   border: none;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #eceff3;
   border-radius: 8px;
   transition: background-color 0.3s;
   cursor: pointer;
 }
 
 .join-btn:hover {
-  background-color: #0956B5;
+  background-color: #3e5572;
 }
 
 /* Cancel Button */
@@ -175,7 +177,8 @@
   align-items: center;
   width: 80px;
   height: 30px;
-  background-color: #F7F9FA;
+  color: #e9ecf0;
+  background-color: #12253d;
   border: 1px solid #e5e5e5;
   font-weight: 700;
   border-radius: 8px;
@@ -184,7 +187,7 @@
 }
 
 .join-cancel-btn:hover {
-  background-color: #d3d3d3;
+  background-color: #3e5572;
 }
 
 /* Responsive Design */
@@ -193,3 +196,4 @@
     width: 90%; /* Make join box responsive */
   }
 }
+

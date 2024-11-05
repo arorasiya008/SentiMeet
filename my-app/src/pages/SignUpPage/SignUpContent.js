@@ -68,8 +68,8 @@ const SignUpContent = () => {
   return (
     <div className="main-container">
       {/* Left section for sign-up form */}
-      <div className="left-section">
-        <div className="sign-in-up-container">
+      <div className="left-section-signup">
+        <div className="sign-in-up-container-3">
           <div className="sign-in-up-title">Sign Up</div>
           <SignUpInput
             className="template-input"

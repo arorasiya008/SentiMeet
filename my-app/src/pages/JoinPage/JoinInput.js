@@ -102,6 +102,7 @@ const JoinInput = (props) => {
         </div>
       )}
       <div className="input-username">
+        <br></br> 
         <InputTemplate
           value={newUsername}
           onchangeHandler={usernameHandler}

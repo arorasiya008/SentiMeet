@@ -2,6 +2,8 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
+  background-color: #b0b7be; 
+  background-image: linear-gradient(135deg, #b0b7be 0%, #8fa1ac 50%, #78878e 100%); 
 }
 
 .navigator-container {
@@ -103,7 +105,7 @@ body {
 }
 
 .drawer-item:hover {
-  background-color: #F7F9FA;
+  background-color: #a9b2b8;
 }
 
 .screen-1-right-container {
@@ -157,7 +159,7 @@ body {
   align-items: center;
   width: 150px;
   height: 50px;
-  background-color: #0E72ED;
+  background-color: #0a2744;
   border-radius: 8px;
   border: 1px solid #e5e5e5;
   border: none;
@@ -173,7 +175,7 @@ body {
   align-items: center;
   width: 170px;
   height: 50px;
-  background-color: #0E72ED;
+  background-color: #0a2744;
   border-radius: 8px;
   border: 1px solid #e5e5e5;
   border: none;
@@ -184,17 +186,19 @@ body {
 }
 
 .screen-1-host-btn:hover, .screen-1-join-btn:hover {
-  background-color: #0956B5;
+  background-color: #2c3e50;
 }
 
 .screen-1-sign-in-btn:hover {
-  background-color: #0956B5;
+  background-color: #2c3e50;
 }
 
 .screen-1-sign-up-link {
   cursor: pointer;
-  color: #0E72ED;
+  color: #142d4b;
+  font-weight: bold;
   transition: 0.3s;
+  font-size: 1.2em;
 }
 
 .screen-1-sign-up-link:hover {
@@ -214,7 +218,7 @@ body {
 }
 
 .screen-1-keyword {
-  color: #0E72ED;
+  color:#0a2744;
 }
 
 .screen-2 {
@@ -249,7 +253,7 @@ body {
 }
 
 .screen-2-top-title {
-  background-color: #0E72ED;
+  background-color: #0a2744;
   color: #FFFFFF;
   font-size: 30px;
   font-weight: 700;
@@ -325,18 +329,24 @@ body {
 .screen-2-bottom-title {
   font-size: 30px;
   font-weight: 700;
-  color:rgb(0, 149, 255);
+  color:rgb(215, 223, 228);
 }
 
 .screen-2-bottom-description {
   font-size: 20px;
+  color:#b0b7be;
+}
 
+.screen-2-bottom-text {
+  font-size: 16px;
+  color:#b0b7be;
 }
 
 .slider {
-  background-color: white;
+  background-color: #031629;
+  /* background-image: linear-gradient(135deg, #5f788d 0%, #0a2744 50%, #02080a 100%);  */
   position: relative;
-  width: 1200px;
+  width: 100%;
   height: calc(100vh - 150px);
   height: 100%;
   margin: auto;
@@ -382,11 +392,13 @@ body {
 .prev-btn {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  color: #a9b2b8;
 }
 
 .next-btn {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+  color: #a9b2b8;
 }
 
 .navigation-visibility {
@@ -407,7 +419,7 @@ body {
 }
 
 .navigation-visibility .slide-icon.active {
-  background: #0E72ED;
+  background: #f4f4f5;
 }
 
 .welcome-page-container {
@@ -563,9 +575,7 @@ body {
   .screen-1-description {
     font-size: 18px;
   }
-  .screen-1-sign-up-link {
-    font-size: 14px;
-  }
+
   .screen-1-btn-container {
     gap: 20px;
   }
