@@ -74,41 +74,7 @@ const RecordBtn = (props) => {
     setOpenRecordingModal(false);
   }
 
-  return (
-    <div className="function-btn-container">
-      <div className="recording-container" onClick={handler}>
-        <img
-          className="record-btn-img function-btn-img"
-          src={isRecording ? RecordStopImg : RecordStartImg}
-          alt=""
-        />
-        <div className="function-btn-name">
-          {isRecording ? "Stop record" : "Start record"}
-        </div>
-        {loading && (
-          <img src={loadingImg} className="recording-loading-img" alt="" />
-        )}
-      </div>
-      {openAccessModal && (
-        <Modal3
-          modalTitle="Request For SignIn"
-          modalBody="You're currently no access for this function, leave for signIn then enjoy it."
-          btnHandler={signInBtnHandler}
-          btnText="Sign In"
-          checkBtnHandler={checkBtnHandler}
-          checkBtnText="Not now"
-        />
-      )}
-      {openRecordingModal && (
-        <Modal
-          modalTitle="Message"
-          modalBody={recordingResponse || "Recording upload success"}
-          btnHandler={checkRecordingHandler}
-          btnText="OK"
-        />
-      )}
-    </div>
-  );
+  
 };
 
 const mapStoreStateToProps = (state) => {
