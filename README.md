@@ -21,7 +21,7 @@ SentiMeet is a P2P video conferencing application that integrates real-time AI s
 
 - **Frontend:** React, Redux
 - **Backend:** Node.js, Express
-- **Database:** Redis
+- **Database:** MongoDB Atlas
 - **WebSocket for real-time communication**
 - **Styling:** CSS Modules
 - **AI Sentiment Analysis**
